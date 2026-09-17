@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving to Southern Oregon: Which City is Right for You? | Property of Southern Oregon</title>
+  <meta name="description" content="With over 200 days of sunshine, stunning mountain vistas, and unmatched Pacific Northwest beauty, discover which Southern Oregon city is right for you. Compare Medford, Ashland, Grants Pass, Jacksonville, and Central Point.">
+  <style>
+/* ==========================================================================
+   Property of Southern Oregon - Design System & Stylesheet
+   Brand Colors:
+     - Primary: #b51f38 (Deep Red)
+     - Base Text: #000000 (Black)
+     - Backgrounds: #ffffff (White), #f8f9fa / #f4f4f4 (Light Neutral Gray)
+   Typography:
+     - Brand Accents & Headings: 'Mont', 'Montserrat', sans-serif (bold/prominent)
+     - Body Text & UI: 'Barlow', sans-serif (line-height 1.6, min 16px)
+   ========================================================================== */
+
+/* --- Google Fonts & Font Fallbacks --- */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@600;700;800;900&display=swap');
+
+/* Fallback definition for 'Mont' to Montserrat */
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont-Bold'), local('Mont'), local('Montserrat-Bold');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont-SemiBold'), local('Montserrat-SemiBold');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont-Black'), local('Montserrat-Black');
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* --- Design Tokens / CSS Custom Properties --- */
+:root {
+  /* Brand Colors */
+  --color-primary: #b51f38;
+  --color-primary-hover: #98192e;
+  --color-primary-dark: #7e1224;
+  --color-primary-subtle: rgba(181, 31, 56, 0.08);
+  --color-primary-light: #fdf2f4;
+
+  /* Neutrals */
+  --color-text: #1a1a1a;
+  --color-text-pure: #000000;
+  --color-text-muted: #555c65;
+  --color-text-light: #76808d;
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f8f9fa;
+  --color-bg-alt: #f4f4f4;
+  --color-border: #e2e5e9;
+  --color-border-dark: #cbd2d9;
+
+  /* Typography Stacks */
+  --font-brand: 'Mont', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Mont', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing & Radii */
+  --container-max: 1200px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.12);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* --- Global Reset & Base Rules --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg-white);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* --- Typography Hierarchy --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text-pure);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+p:last-child { margin-bottom: 0; }
+
+/* --- Layout Utility Classes --- */
+.container { width: 100%; max-width: var(--container-max); margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+.section { padding-top: 5rem; padding-bottom: 5rem; }
+.section-alt { background-color: var(--color-bg-alt); }
+.section-light { background-color: var(--color-bg-light); }
+.section-header { text-align: center; max-width: 820px; margin: 0 auto 3.5rem auto; }
+.section-tag { display: inline-block; font-family: var(--font-brand); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-primary); margin-bottom: 0.75rem; }
+.section-title { font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 800; color: var(--color-text-pure); line-height: 1.2; margin-bottom: 1.25rem; }
+.section-subtitle { font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.65; }
+
+/* --- Buttons --- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-body); font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; padding: 0.9rem 1.85rem; border-radius: var(--radius-sm); border: 2px solid transparent; cursor: pointer; transition: all var(--transition-fast); text-decoration: none; line-height: 1.2; text-align: center; }
+.btn-primary { background-color: var(--color-primary); color: var(--color-bg-white); border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background-color: var(--color-primary-hover); border-color: var(--color-primary-hover); color: var(--color-bg-white); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(181, 31, 56, 0.35); }
+.btn-primary:focus-visible { outline: 3px solid rgba(181, 31, 56, 0.4); outline-offset: 2px; }
+.btn-secondary { background-color: transparent; color: var(--color-bg-white); border-color: var(--color-bg-white); }
+.btn-secondary:hover { background-color: var(--color-bg-white); color: var(--color-text-pure); transform: translateY(-2px); }
+.btn-outline { background-color: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+.btn-outline:hover { background-color: var(--color-primary); color: var(--color-bg-white); }
+.btn-lg { padding: 1.1rem 2.25rem; font-size: 1.05rem; }
+.btn-block { width: 100%; }
+
+/* --- Hero Section --- */
+.hero-section { position: relative; min-height: 680px; display: flex; align-items: center; padding: 6rem 0 5rem 0; color: var(--color-bg-white); overflow: hidden; background: linear-gradient(135deg, rgba(14,16,20,0.92) 0%, rgba(20,23,30,0.82) 55%, rgba(181,31,56,0.78) 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=85') center/cover no-repeat; }
+.hero-content { position: relative; z-index: 2; max-width: 960px; }
+.hero-title { font-family: var(--font-heading); font-size: clamp(2.4rem,5.2vw,4rem); font-weight: 800; line-height: 1.12; color: #ffffff; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+.hero-title span { color: #ff5271; }
+.hero-intro-text { font-size: clamp(1.1rem,2vw,1.28rem); line-height: 1.65; color: rgba(255,255,255,0.94); margin-bottom: 2.25rem; max-width: 840px; }
+.hero-intro-text p { margin-bottom: 1rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1.15rem; align-items: center; margin-bottom: 3.5rem; }
+.hero-highlights-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 1.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.22); }
+.hero-stat-card { display: flex; flex-direction: column; }
+.hero-stat-number { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800; color: #ffffff; line-height: 1.1; }
+.hero-stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.8); margin-top: 0.35rem; }
+
+/* --- Town Previews Showcase Section (First Version Cards) --- */
+.town-previews-section { padding: 5rem 0 3rem 0; background-color: var(--color-bg-white); border-bottom: 1px solid var(--color-border); }
+.cities-grid { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1rem; }
+.city-card { background-color: var(--color-bg-white); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal); flex: 1 1 calc(33.333% - 1.5rem); min-width: 320px; }
+/* Jacksonville & Central Point flex fill the width */
+.city-card.city-card-wide,
+.cities-grid .city-card:nth-child(4),
+.cities-grid .city-card:nth-child(5) { flex: 1 1 calc(50% - 1.5rem); min-width: 340px; }
+.city-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(181,31,56,0.35); }
+.city-image-header { position: relative; height: 220px; overflow: hidden; }
+.city-image-header img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.city-card:hover .city-image-header img { transform: scale(1.05); }
+.city-badge { position: absolute; top: 1rem; left: 1rem; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(4px); color: #ffffff; padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-family: var(--font-brand); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border-left: 3px solid var(--color-primary); }
+.city-price-tag { position: absolute; bottom: 1rem; right: 1rem; background-color: var(--color-bg-white); color: var(--color-text-pure); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; box-shadow: var(--shadow-sm); }
+.city-card-body { padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1; }
+.city-header-area { margin-bottom: 0.85rem; }
+.city-name { font-size: 1.55rem; margin-bottom: 0.25rem; color: var(--color-text-pure); }
+.city-tagline { font-family: var(--font-brand); font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; }
+.city-description { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem; }
+.city-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.5rem; padding: 0.75rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); margin-bottom: 1.25rem; background-color: #fafbfc; border-radius: var(--radius-sm); text-align: center; }
+.metric-col:not(:last-child) { border-right: 1px solid var(--color-border); }
+.metric-label { display: block; font-size: 0.7rem; text-transform: uppercase; color: var(--color-text-light); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.2rem; }
+.metric-value { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--color-text-pure); }
+.city-features { list-style: none; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+.city-feature-item { font-size: 0.885rem; color: var(--color-text); display: flex; align-items: baseline; gap: 0.5rem; }
+.city-feature-item::before { content: '•'; color: var(--color-primary); font-size: 1.15rem; line-height: 1; font-weight: bold; }
+.city-card-footer { margin-top: auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.65rem; }
+.city-card-footer .btn { padding: 0.75rem 1rem; font-size: 0.885rem; }
+.back-to-previews-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted); margin-bottom: 1rem; transition: color var(--transition-fast); }
+.back-to-previews-link:hover { color: var(--color-primary); }
+
+/* --- Detailed Cities Guide Section --- */
+.cities-section { padding: 5rem 0; }
+.city-detail-article { background-color: var(--color-bg-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); margin-bottom: 4.5rem; overflow: hidden; transition: box-shadow var(--transition-normal); }
+.city-detail-article:hover { box-shadow: var(--shadow-lg); }
+.city-detail-hero { position: relative; height: 340px; overflow: hidden; }
+.city-detail-hero img { width: 100%; height: 100%; object-fit: cover; }
+.city-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.78) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2.25rem 2.5rem; }
+.city-hero-badge { display: inline-block; align-self: flex-start; background-color: var(--color-primary); color: #ffffff; font-family: var(--font-brand); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: var(--radius-sm); margin-bottom: 0.75rem; }
+.city-hero-title { font-family: var(--font-heading); font-size: clamp(2rem,3.5vw,2.75rem); color: #ffffff; margin-bottom: 0.35rem; }
+.city-hero-tagline { font-size: 1.1rem; color: rgba(255,255,255,0.9); font-weight: 500; }
+.city-detail-content { padding: 2.5rem; }
+.city-intro-paragraph { font-size: 1.15rem; line-height: 1.65; color: var(--color-text-pure); margin-bottom: 2.25rem; border-left: 4px solid var(--color-primary); padding-left: 1.25rem; }
+.city-blocks-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.75rem; margin-bottom: 2rem; }
+.info-block { background-color: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.65rem; }
+.info-block-header { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem; }
+.info-block-icon { width: 32px; height: 32px; background-color: var(--color-primary-subtle); color: var(--color-primary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-block-title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--color-text-pure); }
+.info-block p { color: var(--color-text); font-size: 0.975rem; line-height: 1.6; }
+.tradeoff-block { background-color: #fff8f8; border: 1px solid #fbd2d7; border-left: 4px solid var(--color-primary); border-radius: var(--radius-md); padding: 1.5rem 1.75rem; margin-bottom: 2.25rem; }
+.tradeoff-header { display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.tradeoff-block p { color: #4a4a4a; font-size: 0.975rem; line-height: 1.6; margin-bottom: 0; }
+.city-actions-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem; padding-top: 1.75rem; border-top: 1px solid var(--color-border); }
+.city-action-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+.city-median-badge { display: flex; align-items: baseline; gap: 0.4rem; }
+.city-median-badge .label { font-size: 0.85rem; text-transform: uppercase; color: var(--color-text-muted); font-weight: 600; }
+.city-median-badge .amount { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-text-pure); }
+
+/* --- "Finding Your Fit" & Ford Real Estate Section --- */
+.finding-fit-section { background: linear-gradient(135deg, #16181d 0%, #1f232b 100%); color: #ffffff; padding: 5rem 0; position: relative; overflow: hidden; }
+.finding-fit-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background-color: var(--color-primary); }
+.finding-fit-wrapper { max-width: 860px; margin: 0 auto; text-align: center; }
+.finding-fit-tag { display: inline-block; font-family: var(--font-brand); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: #ff5271; margin-bottom: 1rem; }
+.finding-fit-title { font-family: var(--font-heading); font-size: clamp(2rem,3.5vw,2.75rem); color: #ffffff; margin-bottom: 1.5rem; }
+.finding-fit-quote { font-size: 1.25rem; line-height: 1.7; color: rgba(255,255,255,0.92); margin-bottom: 2.25rem; }
+.finding-fit-quote strong { color: #ffffff; }
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .top-cities-grid { grid-template-columns: repeat(3,1fr); }
+  .lead-wrapper { grid-template-columns: 1fr; }
+  .cities-checkbox-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .hero-section { padding: 4.5rem 0 3.5rem 0; min-height: auto; }
+  .top-cities-grid { grid-template-columns: 1fr 1fr; }
+  .city-blocks-grid { grid-template-columns: 1fr; }
+  .city-detail-content { padding: 1.75rem 1.25rem; }
+  .city-hero-overlay { padding: 1.5rem; }
+  .city-actions-bar { flex-direction: column; align-items: flex-start; }
+  .city-action-buttons { width: 100%; }
+  .city-action-buttons .btn { width: 100%; }
+  .form-row { grid-template-columns: 1fr; }
+  .cities-checkbox-grid { grid-template-columns: 1fr; }
+  .lead-info-panel,
+  .lead-form-panel { padding: 2.25rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .top-cities-grid { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+  <main id="main-content">
+    <!-- =======================================================================
+         Hero Section
+         Requirement: Hero with placeholder background image, H1 headline,
+         "See All Cities" button, and provided copy
+         ======================================================================= -->
+    <section class="hero-section" aria-label="Moving to Southern Oregon">
+      <div class="container hero-content">
+        <h1 class="hero-title">
+          Moving to Southern Oregon: <span>Which City is Right for You?</span>
+        </h1>
+        <div class="hero-intro-text">
+          <p>
+            With over 200 days of sunshine a year, incredible mountain views, and a cost of living lower than many major West Coast metros, it’s easy to see why people are moving here.
+          </p>
+          <p>
+            Southern Oregon is full of life, beauty, and opportunity. From Medford’s downtown business hub to Ashland’s artsy wine-country retreats, the Rogue Valley offers something for everyone.
+          </p>
+          <p>
+            This guide breaks down the top destinations in Southern Oregon by what matters most to buyers: affordability, schools, amenities, parks, and community.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a href="#town-previews" class="btn btn-primary btn-lg">See All Cities</a>
+        </div>
+        <!-- Regional Highlights Strip -->
+        <div class="hero-highlights-strip">
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Town Previews Showcase (First Version Cards)
+         ======================================================================= -->
+    <section class="town-previews-section" id="town-previews" aria-label="Southern Oregon Town Previews">
+      <div class="container">
+        
+        <div class="cities-grid">
+          <!-- 1. Medford Preview Card -->
+          <article class="city-card">
+            <div class="city-image-header">
+              <img src="https://84a7090095.sdkmedia.net/pub/d8a7/bh951u3w/xbs/p7y/03s/00005.jpg" alt="Medford Oregon" loading="lazy">
+              <span class="city-badge">Commercial Hub</span>
+              <span class="city-price-tag">Median: ~$427,000</span>
+            </div>
+            <div class="city-card-body">
+              <div class="city-header-area">
+                <h3 class="city-name">Medford</h3>
+                <span class="city-tagline">Convenience, Connectivity &amp; Jobs</span>
+              </div>
+              <p class="city-description">
+                The commercial center of the Rogue Valley offering suburban convenience, regional healthcare, and a strong job market.
+              </p>
+              <div class="city-metrics">
+                <div class="metric-col">
+                  <span class="metric-label">Vibe</span>
+                  <span class="metric-value">Suburban</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Parks</span>
+                  <span class="metric-value">30+ Parks</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Airport</span>
+                  <span class="metric-value">5–10 Mins</span>
+                </div>
+              </div>
+              <ul class="city-features">
+                <li class="city-feature-item">East Medford upscale homes &amp; North Medford affordability</li>
+                <li class="city-feature-item">Medford School District Magnet programs &amp; higher ed pathways</li>
+                <li class="city-feature-item">Prescott Park (1,740 acres) &amp; Bear Creek Park (110 acres)</li>
+              </ul>
+              <div class="city-card-footer">
+                <a href="#medford" class="btn btn-primary">View Details &darr;</a>
+                <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Medford&pak=metropolitan+area%3Ag50_9r89rhxc&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-outline">Listings &rarr;</a>
+              </div>
+            </div>
+          </article>
+          <!-- 2. Ashland Preview Card -->
+          <article class="city-card">
+            <div class="city-image-header">
+              <img src="https://84a7090095.sdkmedia.net/pub/d8a7/bh951u3w/odb/57o/yvj/Ashland%2C_Oregon_-_buildings_on_the_Plaza_-_Ashland_Improvement_Company_Building_and_Mills-McCaw_Building.jpg" alt="Ashland Oregon" loading="lazy">
+              <span class="city-badge">Arts &amp; Culture</span>
+              <span class="city-price-tag">Median: ~$515,000</span>
+            </div>
+            <div class="city-card-body">
+              <div class="city-header-area">
+                <h3 class="city-name">Ashland</h3>
+                <span class="city-tagline">Theatre, Walkability &amp; Nature</span>
+              </div>
+              <p class="city-description">
+                Thriving art scene, 93-acre Lithia Park, independent culture, and top-tier schools nestled at the base of the mountains.
+              </p>
+              <div class="city-metrics">
+                <div class="metric-col">
+                  <span class="metric-label">Vibe</span>
+                  <span class="metric-value">Artsy &amp; Walkable</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Grad Rate</span>
+                  <span class="metric-value">~94%</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Setting</span>
+                  <span class="metric-value">Foothills</span>
+                </div>
+              </div>
+              <ul class="city-features">
+                <li class="city-feature-item">Walkable Railroad District &amp; historic homes near Lithia Park</li>
+                <li class="city-feature-item">Oregon Shakespeare Festival &amp; Southern Oregon University</li>
+                <li class="city-feature-item">Mt. Ashland Ski Area &amp; acclaimed independent film festivals</li>
+              </ul>
+              <div class="city-card-footer">
+                <a href="#ashland" class="btn btn-primary">View Details &darr;</a>
+                <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Ashland&pak=city%3Ag30_9r88pbsf&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-outline">Listings &rarr;</a>
+              </div>
+            </div>
+          </article>
+          <!-- 3. Grants Pass Preview Card -->
+          <article class="city-card">
+            <div class="city-image-header">
+              <img src="https://84a7090095.sdkmedia.net/pub/d8a7/bh951u3w/3vm/mll/mfm/rogue%20river.jpg" alt="Grants Pass Oregon" loading="lazy">
+              <span class="city-badge">River &amp; Outdoor</span>
+              <span class="city-price-tag">Average: ~$378,000</span>
+            </div>
+            <div class="city-card-body">
+              <div class="city-header-area">
+                <h3 class="city-name">Grants Pass</h3>
+                <span class="city-tagline">Classic Americana Along the River</span>
+              </div>
+              <p class="city-description">
+                Classic small-town charm along the famous Rogue River, offering affordable housing options and acreage for outdoor lovers.
+              </p>
+              <div class="city-metrics">
+                <div class="metric-col">
+                  <span class="metric-label">Vibe</span>
+                  <span class="metric-value">Outdoorsy</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">River</span>
+                  <span class="metric-value">Rogue River</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Value</span>
+                  <span class="metric-value">Acreage</span>
+                </div>
+              </div>
+              <ul class="city-features">
+                <li class="city-feature-item">Affordable options from downtown bungalows to riverfront homes</li>
+                <li class="city-feature-item">Revitalized Historic G Street with brewpubs &amp; antique shops</li>
+                <li class="city-feature-item">Riverside Park river access &amp; Rogue River School District</li>
+              </ul>
+              <div class="city-card-footer">
+                <a href="#grants-pass" class="btn btn-primary">View Details &darr;</a>
+                <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Grants+Pass&pak=metropolitan+area%3Ag50_9r81h2ms&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-outline">Listings &rarr;</a>
+              </div>
+            </div>
+          </article>
+          <!-- 4. Jacksonville Preview Card -->
+          <article class="city-card city-card-wide">
+            <div class="city-image-header">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Jacksonville Oregon historic brick buildings and vineyards" loading="lazy">
+              <span class="city-badge">Historic &amp; Wine</span>
+              <span class="city-price-tag">Median: ~$693,000</span>
+            </div>
+            <div class="city-card-body">
+              <div class="city-header-area">
+                <h3 class="city-name">Jacksonville</h3>
+                <span class="city-tagline">Preserved 1850s Elegance &amp; Wine</span>
+              </div>
+              <p class="city-description">
+                A National Historic Landmark gold rush town enveloped by rolling vineyards, world-class wineries, and the summer Britt Festival.
+              </p>
+              <div class="city-metrics">
+                <div class="metric-col">
+                  <span class="metric-label">Vibe</span>
+                  <span class="metric-value">Historic Luxury</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Trails</span>
+                  <span class="metric-value">18+ Miles</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Setting</span>
+                  <span class="metric-value">Vineyards</span>
+                </div>
+              </div>
+              <ul class="city-features">
+                <li class="city-feature-item">Strict architectural preservation safeguarding timeless character</li>
+                <li class="city-feature-item">Jacksonville Woodlands trail system with 18+ miles of hiking</li>
+                <li class="city-feature-item">Outdoor Britt Music &amp; Arts Festival summer concert series</li>
+              </ul>
+              <div class="city-card-footer">
+                <a href="#jacksonville" class="btn btn-primary">View Details &darr;</a>
+                <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Jacksonville&pak=city%3Ag30_9r889yb8&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-outline">Listings &rarr;</a>
+              </div>
+            </div>
+          </article>
+          <!-- 5. Central Point Preview Card -->
+          <article class="city-card city-card-wide">
+            <div class="city-image-header">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Central Point residential neighborhood and playground" loading="lazy">
+              <span class="city-badge">Top-10 Safest in OR</span>
+              <span class="city-price-tag">Median: ~$407,000</span>
+            </div>
+            <div class="city-card-body">
+              <div class="city-header-area">
+                <h3 class="city-name">Central Point</h3>
+                <span class="city-tagline">Space, Safety &amp; Artisan Heritage</span>
+              </div>
+              <p class="city-description">
+                Minutes north of Medford, offering extra space, a top-10 safety ranking in Oregon, celebrated artisan foods, and great schools.
+              </p>
+              <div class="city-metrics">
+                <div class="metric-col">
+                  <span class="metric-label">Vibe</span>
+                  <span class="metric-value">Family-First</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Safety</span>
+                  <span class="metric-value">Top-10 in OR</span>
+                </div>
+                <div class="metric-col">
+                  <span class="metric-label">Schools</span>
+                  <span class="metric-value">District 6</span>
+                </div>
+              </div>
+              <ul class="city-features">
+                <li class="city-feature-item">Surge in new construction in Twin Creeks &amp; revitalized downtown</li>
+                <li class="city-feature-item">Famous Artisan Corridor (Rogue Creamery, Buttercloud Bakery)</li>
+                <li class="city-feature-item">Don Jones Memorial Park splash pads &amp; Jackson County Expo</li>
+              </ul>
+              <div class="city-card-footer">
+                <a href="#central-point" class="btn btn-primary">View Details &darr;</a>
+                <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Central+Point&pak=city%3Ag30_9r89546u&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-outline">Listings &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Detailed City Destinations Section
+         ======================================================================= -->
+    <section class="cities-section section-alt" id="cities-guide">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Destination Breakdown</span>
+          <h2 class="section-title">The Top Destinations in Southern Oregon</h2>
+          <p class="section-subtitle">
+            Evaluated by what matters most to buyers: real estate value, school quality, parks, everyday amenities, and unique community culture.
+          </p>
+        </header>
+        <!-- ===================================================================
+             1. MEDFORD, OREGON
+             =================================================================== -->
+        <article class="city-detail-article" id="medford">
+          <div class="city-detail-hero">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Medford Oregon commercial and suburban skyline" loading="lazy">
+            <div class="city-hero-overlay">
+              <span class="city-hero-badge">Commercial Center of the Rogue Valley</span>
+              <h2 class="city-hero-title">Medford, Oregon</h2>
+              <span class="city-hero-tagline">Convenience, Connectivity &amp; Strong Job Market</span>
+            </div>
+          </div>
+          <div class="city-detail-content">
+            <p class="city-intro-paragraph">
+              Medford is a practical choice and the commercial center of the Rogue Valley. It offers convenience, connectivity, and a strong job market, making it ideal for young professionals and families seeking a suburban lifestyle.<br/>
+            </p>
+            <div class="city-blocks-grid">
+              <!-- Real Estate -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  </div>
+                  <h3 class="info-block-title">Real Estate</h3>
+                </div>
+                <p>
+                  With a median home price of around $427,000, your dollar stretches far. Established, upscale neighborhoods dominate East Medford (such as the Cherry Lane area), with newer, more affordable developments in North Medford.
+                </p>
+              </div>
+              <!-- Schools & Parks -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  </div>
+                  <h3 class="info-block-title">Schools &amp; Parks</h3>
+                </div>
+                <p>
+                  The Medford School District is notable for its excellent Magnet programs and higher education pathways. Outdoor enthusiasts can enjoy the over 30 parks with standouts including the 110-acre Bear Creek Park and the expansive 1,740-acre Prescott Park.
+                </p>
+              </div>
+              <!-- Amenities & Lifestyle -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <h3 class="info-block-title">Amenities &amp; Lifestyle</h3>
+                </div>
+                <p>
+                  Healthcare is a major economic driver, followed by retail, and automotive retail. The Rogue Valley Mall and the regional airport add everyday convenience. Most essentials are within a five-minute drive.
+                </p>
+              </div>
+              <!-- Culture -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <h3 class="info-block-title">Culture</h3>
+                </div>
+                <p>
+                  Medford hosts events year-round from April’s Pear Blossom Festival to multiple comic cons. RogueX and Pear Blossom Park keep kids entertained with plenty of fun for everyone throughout the year.
+                </p>
+              </div>
+            </div>
+            <!-- The Trade-Off -->
+            <div class="tradeoff-block">
+              <div class="tradeoff-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <span>The Trade-Off</span>
+              </div>
+              <p>As the commercial center, it experiences more traffic, suburban sprawl, and warmer summer temperatures on the valley floor, with less of the quaint, walkable village charm found in smaller neighboring towns.</p>
+            </div>
+            <!-- Action Bar with Listings Link -->
+            <div class="city-actions-bar">
+              <div class="city-median-badge">
+                <span class="label">Median Home Price:</span>
+                <span class="amount">~$427,000</span>
+              </div>
+              <div class="city-action-buttons">
+                <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Medford&pak=metropolitan+area%3Ag50_9r89rhxc&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-primary">View Medford Listings</a>
+          
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- ===================================================================
+             2. ASHLAND, OREGON
+             =================================================================== -->
+        <article class="city-detail-article" id="ashland">
+          <div class="city-detail-hero">
+            <img src="https://84a7090095.sdkmedia.net/pub/d8a7/bh951u3w/odb/57o/yvj/Ashland%2C_Oregon_-_buildings_on_the_Plaza_-_Ashland_Improvement_Company_Building_and_Mills-McCaw_Building.jpg" alt="Ashland Oregon park and hills" loading="lazy">
+            <div class="city-hero-overlay">
+              <span class="city-hero-badge">Art Scene &amp; Natural Splendor</span>
+              <h2 class="city-hero-title">Ashland, Oregon</h2>
+              <span class="city-hero-tagline">Thriving Arts, Lithia Park &amp; Walkable Charm</span>
+            </div>
+          </div>
+
+          <div class="city-detail-content">
+            <p class="city-intro-paragraph">
+              Ashland’s most notable features are the thriving art scene and stunning natural beauty of Lithia Park. The strongly independent town is highly walkable and consistently ranks among the best small towns in America.
+            </p>
+
+            <div class="city-blocks-grid">
+              
+              <!-- Real Estate -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  </div>
+                  <h3 class="info-block-title">Real Estate</h3>
+                </div>
+                <p>
+                  Median home prices are around $515,000. Popular areas include the trendy, walkable Railroad District and the prestigious historic homes surrounding Lithia Park.
+                </p>
+              </div>
+
+              <!-- Schools & Parks -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  </div>
+                  <h3 class="info-block-title">Schools &amp; Parks</h3>
+                </div>
+                <p>
+                  Education is a major strength, featuring a ~94% graduation rate and a top-10 regional ranking. The 93-acre Lithia Park stretches directly from the downtown plaza up into the mountains.
+                </p>
+              </div>
+
+              <!-- Amenities & Lifestyle -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <h3 class="info-block-title">Amenities &amp; Lifestyle</h3>
+                </div>
+                <p>
+                  The world-famous Oregon Shakespeare Festival operates almost year-round as Ashland’s largest employer and cultural centerpiece. Combined with Southern Oregon University, the town maintains a vibrant, progressive energy. The Mt. Ashland Ski Area has winter sports, summer hiking areas, and community events.
+                </p>
+              </div>
+
+              <!-- Culture -->
+              <div class="info-block">
+                <div class="info-block-header">
+                  <div class="info-block-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <h3 class="info-block-title">Culture</h3>
+                </div>
+                <p>
+                  Oregon Shakespeare Festival and SOU’s shows and events are the highlight of Ashland’s cultural scene. City-wide events, like the exciting Festival of Lights in December and acclaimed Ashland Independent Film Festival, bring the city together.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- The Trade-Off -->
+            <div class="tradeoff-block">
+              <div class="tradeoff-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <span>The Trade-Off</span>
+              </div>
+              <p>Cost of living and property taxes are higher here than in neighboring towns.</p>
+            </div>
+
+            <!-- Action Bar with Listings Link -->
+            <div class="city-actions-bar">
+              <div class="city-median-badge">
+                <span class="label">Median Home Price:</span>
+                <span class="amount">~$515,000</span>
+              </div>
+              <div class="city-action-buttons">
+                <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Ashland&pak=city%3Ag30_9r88pbsf&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-primary">
+                  View Ashland Listings
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                       </div>
+            </div>
+          </div>
+        </article>
+
+<!-- Grants Pass Detail Article -->
+<article class="city-detail-article" id="grants-pass">
+  <div class="city-detail-hero">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Grants Pass Rogue River rapids and bridge" loading="lazy">
+    <div class="city-hero-overlay">
+      <span class="city-hero-badge">Rogue River Adventure &amp; Acreage</span>
+      <h2 class="city-hero-title">Grants Pass, Oregon</h2>
+      <span class="city-hero-tagline">Classic Small-Town Americana Along the River</span>
+    </div>
+  </div>
+
+  <div class="city-detail-content">
+    <p class="city-intro-paragraph">
+      Situated along the world-famous Rogue River, Grants Pass delivers a classic, small-town Americana feel perfect for outdoor enthusiasts and buyers looking for more acreage.
+    </p>
+
+    <div class="city-blocks-grid">
+
+      <!-- Real Estate -->
+      <div class="info-block">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3 class="info-block-title">Real Estate</h3>
+        </div>
+        <p>
+          Homes in Grants Pass are more affordable, with average home prices around $378,000. Options range from historic downtown bungalows to premium riverfront properties.
+        </p>
+      </div>
+
+      <!-- Schools &amp; Parks -->
+      <div class="info-block">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <h3 class="info-block-title">Schools &amp; Parks</h3>
+        </div>
+        <p>
+          The community-focused Rogue River School District features a new early learning and wellness center. Riverside Park offers excellent river access and weekend picnic grounds.
+        </p>
+      </div>
+
+      <!-- Amenities &amp; Lifestyle -->
+      <div class="info-block" style="grid-column: 1 / -1;">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3 class="info-block-title">Amenities &amp; Lifestyle</h3>
+        </div>
+        <p>
+          Revitalized Historic G Street serves as the community core, packed with antique stores, local breweries, dining, and outdoor gear outfits.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- The Trade-Off -->
+    <div class="tradeoff-block">
+      <div class="tradeoff-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span>The Trade-Off</span>
+      </div>
+      <p>It is sleepier, has less nightlife, and it’s further from major retail hubs and the Medford airport.</p>
+    </div>
+
+    <!-- Action Bar with Listings Link -->
+    <div class="city-actions-bar">
+      <div class="city-median-badge">
+        <span class="label">Average Home Price:</span>
+        <span class="amount">~$378,000</span>
+      </div>
+      <div class="city-action-buttons">
+        <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Grants+Pass&pak=metropolitan+area%3Ag50_9r81h2ms&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-primary">
+          View Grants Pass Listings
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Jacksonville Detail Article -->
+<article class="city-detail-article" id="jacksonville">
+  <div class="city-detail-hero">
+    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80" alt="Jacksonville Oregon historic vineyard and street" loading="lazy">
+    <div class="city-hero-overlay">
+      <span class="city-hero-badge">Historic Gold Rush Town</span>
+      <h2 class="city-hero-title">Jacksonville, Oregon</h2>
+      <span class="city-hero-tagline">Preserved 1850s Elegance, Vineyards &amp; Britt Festival</span>
+    </div>
+  </div>
+
+  <div class="city-detail-content">
+    <p class="city-intro-paragraph">
+      As a perfectly preserved 1850s gold rush town surrounded by rolling vineyards, Jacksonville presents as the Rogue Valley’s top charming and historic town.
+    </p>
+
+    <div class="city-blocks-grid">
+      
+      <!-- The Real Estate -->
+      <div class="info-block">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3 class="info-block-title">The Real Estate</h3>
+        </div>
+        <p>
+          A premier location with a high median home price around $693,000. Properties in the historic core are subject to strict architectural preservation guidelines to maintain the town's character.
+        </p>
+      </div>
+
+      <!-- Schools & Parks -->
+      <div class="info-block">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <h3 class="info-block-title">Schools &amp; Parks</h3>
+        </div>
+        <p>
+          Older students generally attend the Medford School District or local private institutions. Jacksonville has several parks with the most impressive being the gorgeous 18+ miles of hiking trails in the Jacksonville Woodlands trail system.
+        </p>
+      </div>
+
+      <!-- Amenities & Lifestyle -->
+      <div class="info-block" style="grid-column: 1 / -1;">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3 class="info-block-title">Amenities &amp; Lifestyle</h3>
+        </div>
+        <p>
+          Surrounded by world-class Rogue Valley vineyards and tasting rooms. During the summer, the outdoor Britt Music &amp; Arts Festival boosts the local economy.
+        </p>
+      </div>
+    </div>
+
+    <!-- The Trade-Off -->
+    <div class="tradeoff-block">
+      <div class="tradeoff-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span>The Trade-Off</span>
+      </div>
+      <p>Summer tourist traffic for wine tasting and the Britt Festival can congest the small streets.</p>
+    </div>
+
+    <!-- Action Bar with Listings Link -->
+    <div class="city-actions-bar">
+      <div class="city-median-badge">
+        <span class="label">Median Home Price:</span>
+        <span class="amount">~$693,000</span>
+      </div>
+      <div class="city-action-buttons">
+        <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Jacksonville&pak=city%3Ag30_9r889yb8&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-primary">
+          View Jacksonville Listings
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Central Point Detail Article -->
+<article class="city-detail-article" id="central-point">
+  <div class="city-detail-hero">
+    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Central Point modern residential neighborhood" loading="lazy">
+    <div class="city-hero-overlay">
+      <span class="city-hero-badge">Top-10 Safest in Oregon (2026)</span>
+      <h2 class="city-hero-title">Central Point, Oregon</h2>
+      <span class="city-hero-tagline">Space, Modern Growth &amp; Celebrated Artisan Heritage</span>
+    </div>
+  </div>
+
+  <div class="city-detail-content">
+    <p class="city-intro-paragraph">
+      Located just minutes north of Medford, Central Point is a sweet spot for buyers looking for more space. It blends a tight-knit community rooted in agricultural heritage with modern residential growth. In 2026, Central Point ranks among the top-10 safest cities in Oregon.</br>
+    </p>
+
+    <div class="city-blocks-grid">
+      
+      <!-- The Real Estate -->
+      <div class="info-block">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3 class="info-block-title">The Real Estate</h3>
+        </div>
+        <p>
+          Median home prices average $407,000. The city is experiencing a surge in new construction, particularly in the popular Twin Creeks development and a revitalized downtown.
+        </p>
+      </div>
+
+      <!-- Schools & Parks -->
+      <div class="info-block">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <h3 class="info-block-title">Schools &amp; Parks</h3>
+        </div>
+        <p>
+          Central Point School District 6 offers 6 elementary schools, 2 middle schools, and 1 high school. Neighborhood highlights include Twin Creeks Park and Don Jones Memorial Park, featuring splash pads, sports courts, and modern playgrounds.
+        </p>
+      </div>
+
+      <!-- Amenities & Lifestyle -->
+      <div class="info-block" style="grid-column: 1 / -1;">
+        <div class="info-block-header">
+          <div class="info-block-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3 class="info-block-title">Amenities &amp; Lifestyle</h3>
+        </div>
+        <p>
+          Famous for its "Artisan Corridor," home to Buttercloud Bakery, Tiffany’s Marketplace, and the world-renowned Rogue Creamery (winner of World's Best Cheese). The nearby Jackson County Expo hosts local fairs, concerts, and events year-round.
+        </p>
+      </div>
+    </div>
+
+    <!-- The Trade-Off -->
+    <div class="tradeoff-block">
+      <div class="tradeoff-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span>The Trade-Off</span>
+      </div>
+      <p>It lacks the variety of Medford or the historic pedigree of Jacksonville, delivering a more modest experience.</p>
+    </div>
+
+    <!-- Action Bar with Listings Link -->
+    <div class="city-actions-bar">
+      <div class="city-median-badge">
+        <span class="label">Median Home Price:</span>
+        <span class="amount">~$407,000</span>
+      </div>
+      <div class="city-action-buttons">
+        <a href="https://www.propertyofsouthernoregon.com/index.php?advanced=1&display=Central+Point&pak=city%3Ag30_9r89546u&statuses%5B%5D=0&statuses%5B%5D=57&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=8&types%5B%5D=9&types%5B%5D=12&types%5B%5D=17&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt" target="_blank" rel="noopener" class="btn btn-primary">
+          View Central Point Listings
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      
+      </div>
+    </div>
+  </div>
+</article>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Finding Your Fit Section
+         ======================================================================= -->
+    <section class="finding-fit-section" aria-label="Finding Your Fit">
+      <div class="container">
+        <div class="finding-fit-wrapper">
+          <span class="finding-fit-tag">Your Next Chapter</span>
+          <h2 class="finding-fit-title">Finding Your Fit in Southern Oregon</h2>
+          <p class="finding-fit-quote">
+            "Whether you're looking for a riverfront cabin in Grants Pass, a historic retreat in Jacksonville, or a newly built home in Central Point, Southern Oregon offers a diverse range of areas to fit your lifestyle. <strong>Contact a Ford Real Estate agent</strong> and we can help you make your dream of moving to Southern Oregon a reality today."
+          </p>
+          <a href="#relocation-form" class="btn btn-primary btn-lg">Connect With A Ford Real Estate Agent</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
